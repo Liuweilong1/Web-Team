@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul,li,ol{
+			list-style:none;
+		}
+		a{
+		text-decoration:none;
+		}
+		input{outline:none;}
+		div{
+			display: block;
+		}
+		#header{
+			padding: 22px 0px;
+			height: 44px;
+		}
+		.logo{
+			width: 1200px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		.login-msg-error{
+			font-size: 12px;
+			color: #6C6C6C;
+			background-color: white;
+			text-align:center ;
+			width:880px;
+			height: 35px;
+			margin:0 auto;
+			margin-top: 25px;
+		}
+		.logo1{
+			float: left;
+			display: block;
+		}
+		.logo1 img{
+			width: 190px;
+			height: 95px;
+		}
+		.link{
+			float: right;
+			color: #666;
+			line-height: 44px;
+			font-size: 12px;
+			text-decoration: none;
+			margin-right: 100px;
+		}
+		.content-layout{
+			width: 1200px;
+			margin: 0 auto;
+			overflow: hidden;
+			height: 600px;
+			position: relative;
+			z-index: 999;
+		}
+		.login-box-warp{
+			position: absolute;
+			top: 120px;
+			right: 60px;
+			width: 350px;
+			height: 400px;
+		}
+		.login-box-warp .login-box{
+			background-color: rgba(255, 255, 255, .9);
+		}
+		.login-box{
+			height: 400px;
+			width: 300px;
+			padding: 25px 25px 23px;
+			color: #6c6c6c;
+			position: relative;
+			margin: 0 auto;
+		}
+
+		.login-swich{
+			width: 52px;
+			height: 52px;
+			line-height: 52px;
+			position: absolute;
+			right: 5px;
+			top: 8px;
+		}
+		.login-tip{
+			position: absolute;
+			top: 40px;
+			right: 58px;
+		}
+		.poptip{
+			border: 1px solid #f3d995;
+			height: 25px;
+			line-height: 16px;
+			padding: 5px 20px 5px 15px;
+			background: #fefcee;
+			position: relative;
+		}
+		.poptip-content span{
+			float: right;
+			margin-right: 10px;
+			margin-top: 4px;
+		}
+		.poptip-arrow{
+			top: 8px;
+			right: 0;
+			position: absolute;
+			z-index: 10;
+		}
+		.poptip .poptip-content{
+			color: #df9c1f;
+			font-size: 12px;
+			font-weight: 400;
+		}
+		.static-form{
+			display: block;
+			position: relative;
+		}
+		.login-title{
+			height: 18px;
+			line-height: 18px;
+			font-size: 16px;
+			color: #3c3c3c;
+			margin-top: 9px;
+			padding-bottom: 8px;
+			font-weight: 700;
+		}
+		.static-form .field {
+    		margin-top: 20px;
+    		position: relative;
+		}
+		.static-form .field label {
+    		display: block;
+    		width: 40px;
+    		height: 40px;
+    		line-height: 40px;
+    		color: #fff;
+    		background: #ddd;
+   			text-align: center;
+   			position: absolute;
+    		left: 1px;
+    		top: 1px;
+    		outline: 0;
+		}
+		.static-form .field .ph-label {
+    		position: absolute;
+    		line-height: 42px;
+    		height: 42px;
+    		color: #999;
+    		opacity: 1;
+    		left: 55px;
+    		top: 8px;
+    		font-size: 14px;
+		}
+		.static-form .login-text {
+    		width: 237px;
+    		font-size: 14px;
+    		line-height: 18px;
+    		height: 28px;
+    		padding: 11px 8px 11px 49px;
+    		border: 1px solid #ddd;
+		}	
+		.static-form .pwd-field label {
+    		background-position: 50% -30px;
+		}
+		.static-form .field label {
+    		display: block;
+    		width: 40px;
+    		height: 40px;
+    		line-height: 40px;
+    		color: #fff;
+   			background: #ddd;
+    		text-align: center;
+    		position: absolute;
+    		left: 1px;
+    		top: 1px;
+    		outline: 0;
+		}
+		.login-box .submit{
+			padding-top: 20px;
+		}
+		.login-box .submit button {
+    		width: 300px;
+    		height: 42px;
+    		border: 0;
+    		display: inline-block;
+    		overflow: hidden;
+    		vertical-align: middle;
+    		line-height: 42px;
+    		font-size: 16px;
+    		font-weight: 700;
+    		color: #fff;
+    		background: #f40;
+    		border-radius: 3px;
+   			cursor: pointer;
+   	 		zoom: 1;
+		}
+		.static-form .other-login {
+    		margin-top: 24px;
+    		line-height: 14px;
+		}
+		.static-form .other-login a {
+    		display: inline-block;
+    		margin-right: 20px;
+    		font-size: 15px;
+
+		}
+		.login-box a {
+    		color: #6c6c6c;
+		}
+		.login-links {
+    		margin-top: 25px;
+    		overflow: hidden;
+    		text-align: right;
+		}
+		.login-links a {
+    		margin-right: 10px;
+    		font-size: 12px;
+		}
+		.qrcode-main {
+    		position: relative;
+    		margin-top: 24px;
+    		height: 180px;
+		}
+		.qrcode-img {
+    		position: absolute;	
+    		top: 0;
+    		z-index: 100;
+		}
+		.qrcode-img img {
+    		vertical-align: top;
+		}
+		.qrcode-login .msg-err {
+    		width: 170px;
+    		height: 170px;
+    		background: rgba(255,255,255,.95);
+    		position: absolute;
+    		left: 75px;
+    		top: 0;
+    		z-index: 9999;
+		}
+		.qrcode-login .msg-err h6 {
+    		color: #3c3c3c;
+    		margin-top: 38px;
+    		margin-bottom: 8px;
+    		text-align: center;
+    		font-size: 14px;
+		}
+		.qrcode-login .msg-err .refresh {
+    		width: 100px;
+    		height: 36px;
+    		line-height: 36px;
+    		text-align: center;
+    		margin: 0 auto;
+    		background: #f40;
+    		display: block;
+    		color: #fff;
+    		border-radius: 3px;
+		}
+
+		.qrcode-desc {
+    		overflow: hidden;
+    		width: 188px;
+    		margin: 24px auto 0;
+		}
+		.qrcode-desc p {
+    		width: 144px;
+    		line-height: 18px;
+    		color: #6c6c6c;
+    		font-size: 12px;
+    		float: left;
+		}
+		.login-box a.light-link {
+    		color: #f40;
+		}
+
+
+
+
+
+		.footer{
+			position: relative;
+			margin: 60px auto 0;
+			padding: 7px 0 9px;
+			border-top: 1px solid #ddd;
+			width: 1200px;
+			height: 180px;
+		}
+		a:hover{
+			color: red;
+		}
+		.footer .footer-hd p{
+			margin-bottom: 8px;
+			line-height: 27px;
+			border-bottom: 1px solid #ddd;
+		}
+		.footer-hd p{
+			padding-bottom: 8px;
+			overflow: hidden;
+		}
+		.footer .footer-hd a{
+			display: inline;
+			float: left;
+			margin: 0 4px;
+			white-space: nowrap;
+			color: #6c6c6c;
+			text-decoration: none;
+		}
+		.footer .footer-hd b{
+			display: inline;
+			float: left;
+			margin: 0 3px;
+			font-weight: 400;
+			color: #ddd;
+		} 
+		.footer .footer-bd a{
+			display: inline;
+			float: left;
+			margin: 0 4px;
+			white-space: nowrap;
+			color: #6c6c6c;
+			text-decoration: none;
+		}
+		.footer .footer-bd em{
+			margin-left: 30px;
+			display: inline;
+			float: left;
+			white-space: nowrap;
+			color: #9c9c9c;
+			font-weight: 400;
+			font-style: normal;
+		}
+		.footer .footer-bd span{
+			margin: 0 4px;
+			display: inline;
+			float: left;
+			white-space: nowrap;
+			color: #9c9c9c;
+		}
+		.footer .footer-bd b{
+			display: inline;
+			float: left;
+			margin: 0 3px;
+			font-weight: 400;
+			color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div id="header" class="clearfix">
+		<div class="logo">
+			<a href="https://liuweilong1.github.io/Web-Team/guozihao/大作业.html" class="logo1"><img src="images/logo.jpg" alt="趣买它"></a>
+			<div class="login-msg-error">
+				<p class="error" >
+							为确保您账户的安全及正常使用，依《网络安全法》相关要求，6月1日起会员账户需绑定手机。如您还未绑定，请尽快完成，感谢你的理解及支持！
+				</p>
+			</div>
+			<a href="#" class="link">
+				<img src="images/建议.png" alt="jianyi">
+				"登录界面"改进建议
+			</a>
+		</div>
+	</div>
+	<div class="content">
+		<div class="login-newbg" style="background-image: url(images/圣诞小黄人.gif) ;height: 600px;margin-top:30px;">
+			<div class="content-layout">
+				<div class="login-box-warp">
+					<div class="login-box" id="loginbox">
+						<div class="hd" style="display: none;">
+							<div class="login-switch">
+								<img src="images/二维码小黄人.jpg" alt="saoma" style="height:60px;width:60px;" onclick="two()">
+							</div>
+							<div class="login-tip">
+								<div class="poptip">
+									<div class="poptip-content">
+										<img src="images/盾牌.png" alt="hudun">
+										<span>扫码登录更安全</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="bd">
+						<!--标准登录框-->
+							<div class="static-form" style="display: none;">
+								<div class="login-title">
+								密码登录
+								</div>
+								<form action="">
+									<div class="field username-field">
+									<label for="TPL_username_1"><img src="images/people.png" alt=""></label>
+									<span class="ph-label">会员名/邮箱/手机号</span>
+									<input type="text" name="TPL_username" id="TPL_username_1" class="login-text J_UserName" value="" maxlength="32" tabindex="1" aria-label="会员名/邮箱/手机号">
+									</div>
+									<div class="field pwd-field">
+									<label id="password-label" for="TPL_password_1"><img src="images/lock.png" alt=""></label>
+									<span id="J_StandardPwd">
+										<input type="password" name="TPL_password" id="TPL_password_1" class="login-text" maxlength="40" tabindex="2" autocomplete="off" aria-label="登录密码">
+									</span>
+									</div>
+									<div class="submit">
+										<button type="submit" class="J_Submit" tabindex="3" id="J_SubmitStatic" data-ing="正在登录...">登 录</button>
+									</div>
+									<ul class="entries">
+									<li id="J_OtherLogin" class="other-login">
+										<a href="https://weibo.com/login.php?entry=taobao&goto=https%3A%2F%2Flogin.taobao.com%2Faso%2Ftvs%3Fdomain%3Dweibo%26sid%3D0880f942367e05d5357575798407bb0a%26target%3D687474703A2F2F636172742E74616F62616F2E636F6D2F636172742E68746D3F73706D3D613231626F2E323031372E313939373532353034392E312E33333065313164397578774652742666726F6D3D6D696E6926706D5F69643D3135303130333630303061303263356333373339&goto2=http%3A%2F%2Fcart.taobao.com%2Fcart.htm%3Fspm%3Da21bo.2017.1997525049.1.330e11d9uxwFRt%26from%3Dmini%26pm_id%3D1501036000a02c5c3739" tabindex="4" class="weibo-login"><img src="images/weibo.png" alt="">微博登录</a>
+										<a href="https://auth.alipay.com/login/index.htm?loginScene=7&goto=https%3A%2F%2Fauth.alipay.com%2Flogin%2Ftaobao_trust_login.htm%3Ftarget%3Dhttps%253A%252F%252Flogin.taobao.com%252Fmember%252Falipay_sign_dispatcher.jhtml%253Ftg%253Dhttp%25253A%25252F%25252Fcart.taobao.com%25252Fcart.htm%25253Fspm%25253Da21bo.2017.1997525049.1.330e11d9uxwFRt%252526from%25253Dmini%252526pm_id%25253D1501036000a02c5c3739&params=VFBMX3JlZGlyZWN0X3VybD1odHRwJTNBJTJGJTJGY2FydC50YW9iYW8uY29tJTJGY2FydC5odG0lM0ZzcG0lM0RhMjFiby4yMDE3LjE5OTc1MjUwNDkuMS4zMzBlMTFkOXV4d0ZSdCUyNmZyb20lM0RtaW5pJTI2cG1faWQlM0QxNTAxMDM2MDAwYTAyYzVjMzczOQ%3D%3D" tabindex="5" class="alipay-login"><img src="images/zfb.png" alt="">支付宝登录</a> 
+									</li>
+									</ul>
+									<div class="login-links">
+									<a href="#" tabindex="6" class="forget-pwd" target="_blank">
+									忘记密码</a>
+					
+									<a href="#">忘记会员名</a>
+					
+									<a href="https://liuweilong1.github.io/Web-Team/liutianyi/sign on.html" class="register"
+									target="_blank" tabindex="7">免费注册</a>
+				
+									</div>
+								</form>
+							</div>
+						<!--快速登录框-->
+							<div class="quick-form" style="display: block;">
+  								<div class="qrcode-login" id="J_QRCodeLogin">
+   									<div class="login-title">手机扫码，安全登录</div>
+     								<div class="qrcode-mod">
+        								<div class="qrcode-main">
+            								<div class="qrcode-img" id="J_QRCodeImg" style="opacity: 1;">
+            									<img src="images/二维码小黄人.jpg" alt="" style="height:170px;width:170px;padding-left:70px;">
+            								</div>
+		    								<div class="msg-err" style="display: none;">
+												<h6>二维码已失效</h6>
+												<a  class="refresh J_QRCodeRefresh" onclick="fre()">请点击刷新</a>
+		    								</div>
+        								</div>
+										<div class="qrcode-desc" data-spm="25847036">
+            								<img src="images/yi.png" alt="">
+             								<p><font class="ft-gray">打开 </font><a href="https://www.taobao.com/m" target=_blank class="light-link">手机趣买</a> | <a href="https://www.tmall.com/wow/portal/act/app-download?mmstat=pc_login" target=_blank class="light-link">手机买买</a>
+              								<span class="ft-gray">扫一扫登录</span></p>
+        								</div>
+      								</div>
+									<div class="login-links">
+        								<a  class="forget-pwd J_Quick2Static" target="_blank" onclick="paw()">密码登录</a>
+        								<a href="https://liuweilong1.github.io/Web-Team/liutianyi/sign on.html" class="register" target="_blank" >免费注册</a>
+   									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-hd">
+			<p>
+				<a href="#">趣买它集团</a>
+				<b>|</b>
+				<a href="#">趣买它国际站</a>
+				<b>|</b>
+				<a href="#">趣买它中国站</a>
+				<b>|</b>
+				<a href="#">全球速卖</a>
+				<b></b>
+				<a href="#">趣买网</a>
+				<b>|</b>
+				<a href="#">买买</a>
+				<b>|</b>
+				<a href="#">超划算</a>
+				<b>|</b>
+				<a href="#">一趣</a>
+				<b>|</b>
+				<a href="#">趣买妈妈</a>
+				<b>|</b>
+				<a href="#">走牛</a>
+				<b>|</b>
+				<a href="#">长虫</a>
+				<b>|</b>
+				<a href="#">趣网云计算</a>
+				<b>|</b>
+				<a href="#">云OS</a>
+				<b>|</b>
+				<a href="#">万网</a>
+				<b>|</b>
+				<a href="#">微信支付</a>
+				<b>|</b>
+				<a href="#">来往</a>
+			</p>
+		</div>
+		<div class="footer-bd">
+			<p>
+				<a href="#">关于我们</a>
+				<a href="#">合作伙伴</a>
+				<a href="#">营销中心</a>
+				<a href="#">廉政举报</a>
+				<a href="#">联系客服</a>
+				<a href="#">开放平台</a>
+				<a href="#">诚招英才</a>
+				<a href="#">联系我们</a>
+				<a href="#">网站地图</a>
+				<a href="#">法律声明</a>
+				<a href="#">隐私权政策</a>
+				<em>© 2019 Qumai.com 版权所有</em>
+			</p>
+			<p>
+				<span>网络文化经营许可证：浙网文[2016]0132-032号</span>
+				<b>|</b>
+				<span>增值电信业务经营许可证：浙B2-20080224-1</span>
+				<b>|</b>
+				<span>信息网络传播视听节目许可证：1109364号</span>
+			</p>
+		</div>
+	</div>
+</body>
+<script>
+	function paw(){
+		var sf=document.getElementsByClassName("static-form")[0];
+		var hd=document.getElementsByClassName("hd")[0];
+		var qf=document.getElementsByClassName("quick-form")[0];
+		qf.style.display="none";
+		sf.style.display="block";
+		hd.style.display="block";
+	}
+	function two(){
+		var hd=document.getElementsByClassName("hd")[0];
+		var qf=document.getElementsByClassName("quick-form")[0];
+		var sf=document.getElementsByClassName("static-form")[0];
+		sf.style.display="none";
+		hd.style.display="none";
+		qf.style.display="block";
+	}
+	var num=20;
+	var timer=setInterval(function(){
+		if(num>0){
+			num=num-1;
+		}
+		else{
+			var mse=document.getElementsByClassName("msg-err")[0];
+			mse.style.display="block";
+			clearInterval(timer);
+		}
+	},1000);
+	function fre(){
+		var mse=document.getElementsByClassName("msg-err")[0];
+		mse.style.display="none";
+	}
+</script>
+</html>

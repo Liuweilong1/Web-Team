@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		ul,li,ol{
+			list-style:none;
+		}
+		a{
+		text-decoration:none;
+		}
+		input{outline:none;}
+		div{
+			display: block;
+		}
+		body{
+			background: #f8f8f8;
+		}
+		.header{
+			width: 990px;
+			height: 88px;
+			margin: 0 auto;
+			font-family: "Microsoft Yahei";
+		}
+		.header .login{
+			float: right;
+			margin-top: 63px;
+			color: #333;
+		}
+		.header .logo img{
+			float: left;
+			width: 170px;
+			height: 85px;
+			margin-right: 24px;
+		}
+		.header .logo-txt{
+			float: left;
+			font-size: 18px;
+			color: #666;
+			line-height: 88px;
+		}
+		.main{
+			width: 990px;
+			margin: 0 auto;
+			border-top: 3px solid red;
+			background: #fff;
+			padding: 55px 0;
+			line-height: 1.5;
+		}
+		.reg-form{
+			width: 420px;
+			margin: 0 auto;
+		}
+		.reg-form .gift-pkg{
+			font-size: 14px;
+			line-height: 17px;
+			padding-left: 2px;
+			margin-bottom: 17px;
+		}
+		.box{
+			width: 420px;
+			height: 270px;
+			padding: 0 20px;
+			
+			margin: 50px auto;
+		}
+		.inp{
+			width: 100%;
+			height: 40px;
+			text-indent: 8px;
+		}
+		.notice{
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+		}
+
+		.code{
+			width: 60%;
+		}
+		.getCode{
+			width: 35%;
+			height: 44px;
+			float: right;
+			border: none;
+			background-color: #eee;
+		}
+		.btn{
+			background: red;
+			width: 100%;
+			height: 40px;
+			border: none;
+			margin-top: 8px;
+			color: #fff;
+			border-radius: 3px;
+		}
+
+
+		.ng-footer{
+			height: 200px;
+			margin-top: 0;
+			font-family: "Microsoft Yahei";
+		}
+		.ng-s-footer{
+			height: 185px;
+			background: none;
+			text-align: center;
+			width: 100%;
+			min-width: 1200px;
+			padding-top: 15px;
+		}
+		.ng-s-f-con{
+			height: 185px;
+			width: 1200px;
+			min-width: 1200px;
+			margin: 0 auto;
+		}
+		.ng-url-list{
+			height: 25px;
+			line-height: 25px;
+		}
+		.ng-url-list a{color:#666666;}
+		.ng-url-list span{color:#888;padding:0 8px;}
+		.ng-copyright{
+			height: 25px;
+			line-height: 25px;
+		}
+		.ng-copyright a{
+			color: #666666;
+		}
+		.ng-authentication{
+			float: none;
+			margin: 0 auto;
+			height: 25px;
+			width: 1200px;
+			margin-top:5px ;
+		}
+		.ng-authentication a{
+			display: inline-block;
+			margin-right: 8px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<a href="https://liuweilong1.github.io/Web-Team/liutianyi/sign in.html" class="login">我已经注册，马上登录 ></a>
+		<a href="https://liuweilong1.github.io/Web-Team/guozihao/大作业.html" class="logo"><img src="images/logo.jpg" alt=""></a>
+		<div class="logo-txt">欢迎注册</div>
+	</div>
+	<div class="main">
+		<form action="#" id="enterReg_form">
+			<div class="reg-form">
+				<div class="gift-pkg">
+					<img src="images/gift.png" alt="">
+					注册领
+					<em style="color:red;font-size:14px;line-height:17px;">199</em>
+					元大礼包
+				</div>
+				<div class="box">
+					<input class="inp" type="text" placeholder="手机号" onblur="Delete1()" onfocus="Add1()">
+					<p class="notice" style="color:red;"></p>
+
+					<input class="inp" type="password" placeholder="设置密码" onblur="Delete2()" onfocus="Add2()">
+					<p class="notice"></p>
+					<div id="Test">
+						<input class="inp code" type="text" placeholder="验证码">
+						<button class="getCode" onclick="addImg()">获取手机验证码</button>
+					</div>
+					<p class="notice"></p>
+					<button class="btn" onclick="Submit()">提交注册</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="ng-footer">
+		<div class="ng-s-footer">
+			<div class="ng-s-f-con">
+				<p class="ng-url-list">
+					<a href="#">趣买互联</a>
+					<span>|</span>
+					<a href="#">趣买金融</a>
+					<span>|</span>
+					<a href="#">趣买支付</a>
+					<span>|</span>
+					<a href="#">TT视频</a>
+					<span>|</span>
+					<a href="#">蓝孩子</a>
+					<span>|</span>
+					<a href="#">趣买物流</a>
+					<span>|</span>
+					<a href="#">手机趣买</a>
+					<span>|</span>
+					<a href="#">零售云</a>
+					<span>|</span>
+					<a href="#">趣买云</a>
+					<span>|</span>
+					<a href="#">知识产权去报</a>
+					<span>|</span>
+					<a href="#">投资者关系</a>
+					<span>|</span>
+					<a href="#">趣买智能</a>
+				</p>
+				<p class="ng-url-list">
+					<a href="#">联系我们</a>
+					<span>|</span>
+					<a href="#">诚聘英才</a>
+					<span>|</span>
+					<a href="#">合作招商</a>
+					<span>|</span>
+					<a href="#">广告平台</a>
+					<span>|</span>
+					<a href="#">趣买联盟</a>
+					<span>|</span>
+					<a href="#">趣买招标</a>
+					<span>|</span>
+					<a href="#">友情链接</a>
+					<span>|</span>
+					<a href="#">隐私政策</a>
+					<span>|</span>
+					<a href="#">用户体验提升计划</a>
+					<span>|</span>
+					<a href="#">股东会员</a>
+				</p>
+				<p class="ng-copyright" style="display: block;">
+					
+						Copyright© 2002-2020，趣买集团股份有限公司版权所有
+					<span>|</span>
+					<a href="#">
+						趣公网安备 1234567654323号
+					</a>
+					<span>|</span>
+					<a href="#">趣ICP备12345654号-4</a>
+				</p>
+				<p class="ng-copyright ng-copyright-2" style="display: block;">
+					<a href="#" style="color:#999;">合字B2-20180025</a>
+					<span>|</span>
+					<a href="#" style="color:#999;">合字A1.B1.B2-20180017</a>
+					<span>|</span>
+					<a href="#" style="color:#999;">出版物经营许可证新出发苏批字第A-243号</a>
+					<span>|</span>
+
+						互联网药品信息服务资格证书
+					<a href="#" style="color:#999;">（苏）-非经营性-2016-0005</a>	
+				</p>
+				<p class="ng-copyright ng-copyright-3" style="display: block;">
+					<a href="#" style="color:#999;">经营证照</a>
+					<span>|</span>
+					<a href="#" style="color:#999;">医疗器械网络交易服务第三方平台备案凭证-（苏）网械平台备字（2018）第00052号</a>
+					<span>|</span>
+					<a href="#" style="color:#999;">网络文化经营许可证：苏网文〔2018〕10580-203号</a>
+				</p>
+				<p class="ng-copyright" style="display: block;">本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）</p>
+				<div class="ng-authentication" style="display: block;">
+					<a href="#"><img src="images/网信.png" alt=""></a>
+					<a href="#"><img src="images/诚信.png" alt=""></a>
+					<a href="#"><img src="images/联通.png" alt=""></a>
+					<a href="#"><img src="images/电信.png" alt=""></a>
+					<a href="#"><img src="images/执照.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	function Add1(){
+		var obj=document.getElementsByClassName("notice")[0];
+		if(!obj.value){
+			obj.innerHTML="请输入注册手机号!"
+		}
+	}
+	function Delete1(){
+		var obj=document.getElementsByClassName("notice")[0];
+		obj.innerHTML="";
+	}
+	function Add2(){
+		var obj=document.getElementsByClassName("notice")[1];
+		if(!obj.value){
+			obj.innerHTML="请设置6-12位密码，其中包含数字、字母、符号";
+		}			
+	}
+	function Delete2(){
+		var obj=document.getElementsByClassName("notice")[1];
+		obj.innerHTML="";
+	}
+	function addImg(){
+		var obj2=document.getElementsByClassName("notice")[2];
+		var obj0=document.getElementsByClassName("notice")[0];
+		if(!obj0.value){
+			obj2.innerHTML="手机验证码已经发送，8小时内有效";	
+		}
+		var code=document.getElementsByClassName("getCode")[0];
+		var num=60;
+		var timer=setInterval(function(){
+			if(num>=0){
+				code.innerHTML=num+"（s）可再次点击发送";
+				num=num-1;
+			}
+			else if(num<0){
+				clearInterval(timer);
+				code.innerHTML="获取手机验证码";
+				obj2.innerHTML="";
+			}
+		}, 1000);
+	}
+	function Submit(){
+		var b=document.getElementsByClassName("inp")[1].value;
+		var obj2=document.getElementsByClassName("notice")[1]
+		var b1=""+b;
+		if(b1.length<6||b1.length>12){
+			obj2.innerHTML="密码位数不对";
+		}
+		else
+			alert("注册成功！");
+	}
+</script>
+</html>
