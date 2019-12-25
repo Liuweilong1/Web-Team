@@ -1,0 +1,126 @@
+/*
+* @Author: 73152
+* @Date:   2019-12-22 14:47:37
+* @Last Modified by:   73152
+* @Last Modified time: 2019-12-22 17:47:34
+*/
+body{
+     margin: 0px;
+     padding: 0px;
+     background-color: pink;
+}
+a{
+	text-decoration: none;
+}
+ul{
+    list-style: none;
+    float: right;
+}
+#li1{
+	font-weight: bolder;
+}
+li{
+	width: 230px;
+	height: 50px;
+	color: green;
+	line-height: 50px;
+	outline: 1px solid red;
+	cursor: pointer;
+	padding-left: 10px;
+	background-color: lightblue;
+}
+.head{
+	float: left;
+	margin: 0;
+}
+.head li{
+	float: left;
+	height: 20px;
+	width: 80px;
+}
+button{
+	color: green;
+	background-image: url("猫爪按钮.jpg");
+	width: 70px;
+	height: 50px;
+	font-size: 14px;
+	font-weight: bolder;
+}
+.button1{
+	width: 100px;
+}
+
+.bodybig{
+	background-image: url(495c3555a4e741b.jpg); 
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 1200px;
+	height: 550px;
+	float: left;
+/*  	margin: 0 auto; */
+}
+.zhongdeng{
+	width: 300px;
+	height: 500px;
+	left: -200px;
+	float: left;
+}
+.red{
+ background-image:url(气球小人.jpeg);
+ background-repeat: no-repeat;
+ background-position: center;
+ width:200px;
+ height:200px;
+ position:relative;/* 相对与自身默认定位 */
+ left:-200px;
+ top:0px;
+
+}
+.pink{
+ background:pink;
+ width:20px;
+ height:120px;
+ position:relative;
+ left:200px;
+ top:25px;
+}
+.red a{
+	float: left;
+
+}
+.red2{
+	margin-right: 0; 
+     background-image:url(飞机小人.jpg);
+     background-repeat: no-repeat;
+     background-position: center;
+     width:200px;
+     height:200px;
+     position:relative;/* 相对与自身默认定位 */
+     top: 200px;
+     left:-200px;
+     top:0px;
+}
+.marginyou{
+	margin:0 auto;
+	width: 440px;
+	height: 60px;
+	position: relative;
+	top: 200px;
+	font-size: 30px;
+	color: purple;
+}
+.imgs{
+	width: 600px;
+	float: right;
+}
+#div{
+}
+
+
+
+#tooltip {
+    position: fixed;
+    background:lightgreen;
+    display: inline;
+    border: 1px solid black;
+}
